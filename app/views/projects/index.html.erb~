@@ -1,0 +1,39 @@
+<h1>Listing projects</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Body</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+	
+<% @projects.each do |project| %>
+  <tr>
+    <td><%= project.title %></td>
+    <td><%= project.body %></td>
+    <td><%= link_to 'Show', project %></td>
+    <td><%= link_to 'Edit', edit_project_path(project) %></td>
+    <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+  
+
+		<% project.sponsors.each do |sponsor| %>
+		<tr>		
+		<th>sponsor</th>	
+		<td><%= h(sponsor.name) %> 
+		Amount : <%= h(sponsor.amount) %> </td>
+		<td></th>
+    <td></th>
+		</tr>	
+		<% end %>
+	
+	
+
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Project', new_project_path %>
