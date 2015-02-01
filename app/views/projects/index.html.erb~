@@ -4,15 +4,17 @@
   <tr>
     <th>Title</th>
     <th>Body</th>
+    <th>Target</th>
     <th></th>
     <th></th>
-    <th></th>
+		<th></th>
   </tr>
 	
 <% @projects.each do |project| %>
   <tr>
     <td><%= project.title %></td>
     <td><%= project.body %></td>
+		<td><%= project.target %></td>
     <td><%= link_to 'Show', project %></td>
     <td><%= link_to 'Edit', edit_project_path(project) %></td>
     <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -26,6 +28,7 @@
 		Amount : <%= h(sponsor.amount) %> </td>
 		<td></th>
     <td></th>
+		<td></th>
 		</tr>	
 		<% end %>
 	

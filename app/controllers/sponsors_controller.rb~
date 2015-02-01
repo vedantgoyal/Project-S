@@ -41,10 +41,18 @@ class SponsorsController < ApplicationController
   # POST /sponsors
   # POST /sponsors.json
   def create
-    @sponsor = Sponsors.new(params[:sponsor])
+    @sponsor = Sponsor.new(params[:sponsor])
+    p_id = @sponsor.project_id 
+    
 
     respond_to do |format|
-      if @sponsor.save
+      if !(Project.exists?(p_id))
+   	    #  raise "Project with this project_id does not exist"   
+        errors.add(:project_id, 'Does not exist')     
+        format.html { render action: "new", notice: 'project_id was wrong' }
+        format.json { render json: @sponsor.errors, status: :unprocessable_entity }
+
+      elsif @sponsor.save
         format.html { redirect_to @sponsor, notice: 'Sponsor was successfully created.' }
         format.json { render json: @sponsor, status: :created, location: @sponsor }
       else

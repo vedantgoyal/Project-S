@@ -1,9 +1,19 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
+  id: 1
   title: MyString
   body: MyText
+  target: MyFloat
 
 two:
-  title: MyString
-  body: MyText
+  id: 2
+  title: MyString2
+  body: MyText2
+  target: MyFloat2
+
+three:
+  id: 3
+  title: MyString3
+  body: MyText3
+  target: MyFloat3

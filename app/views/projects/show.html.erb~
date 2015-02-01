@@ -28,7 +28,7 @@
 	<% end %>
 </div>
 	
-<%= link_to 'New Sponsor', new_project_sponsor_path %>
+<%= link_to 'New Sponsor', "/projects/#{@project.id}/sponsors/new" %>
 
 
 
