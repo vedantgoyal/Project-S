@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  project_id: 1
+  name: s1
+  amount: 1.5
+
+two:
+  project_id: 1
+  name: s2
+  amount: 2.5
+
+
